@@ -38,14 +38,18 @@ main.style.justifyContent = "space-between";
 main.style.gap = "3rem";
 
 //category
-category.forEach((el) => (el.style.fontSize = "4rem"));
-category.forEach((el) => (el.style.borderBottom = "1px solid"));
-category.forEach((el) => (el.style.display = "block"));
-category.forEach((el) => (el.style.marginBottom = "3rem"));
+category.forEach((el) => {
+  el.style.fontSize = "4rem";
+  el.style.borderBottom = "1px solid";
+  el.style.display = "block";
+  el.style.marginBottom = "3rem";
+});
 
 //food item
-foodItem.forEach((el) => (el.style.fontSize = "2.8rem"));
-foodItem.forEach((el) => (el.style.marginBottom = "1.8rem"));
+foodItem.forEach((el) => {
+  el.style.fontSize = "2.8rem";
+  el.style.marginBottom = "1.8rem";
+});
 
 // allery warning section
 allergyWarning.style.marginBottom = "10rem";
@@ -61,12 +65,16 @@ allergieContainer.style.display = "grid";
 allergieContainer.style.placeItems = "center";
 
 // allergy info
-allergyInfo.forEach((el) => (el.style.marginBottom = "4rem"));
-allergyInfo.forEach((el) => (el.style.width = "50%"));
+allergyInfo.forEach((el) => {
+  el.style.marginBottom = "4rem";
+  el.style.width = "50%";
+});
 
 //allergy info even
-allergyInfoEven.forEach((el) => (el.style.backgroundColor = "cyan"));
-allergyInfo.forEach((el) => (el.style.marginBottom = "2rem"));
+allergyInfoEven.forEach((el) => {
+  el.style.backgroundColor = "cyan";
+  el.style.marginBottom = "2rem";
+});
 
 // footer
 footer.style.display = "flex";
@@ -76,41 +84,35 @@ footer.style.gap = "5rem";
 footer.style.marginBottom = "15rem";
 
 // footer description
-footerDesc.forEach((el) => (el.style.display = "grid"));
-footerDesc.forEach((el) => (el.style.placeItems = "center"));
-footerDesc.forEach((el) => (el.style.fontSize = "3rem"));
-footerDesc.forEach((el) => (el.style.borderRadius = "50%"));
-footerDesc.forEach((el) => (el.style.width = "20rem"));
-footerDesc.forEach((el) => (el.style.height = "20rem"));
-footerDesc.forEach((el) => (el.style.border = "10px solid blue"));
+footerDesc.forEach((el) => {
+  el.style.display = "grid";
+  el.style.placeItems = "center";
+  el.style.fontSize = "3rem";
+  el.style.borderRadius = "50%";
+  el.style.width = "20rem";
+  el.style.height = "20rem";
+  el.style.border = "10px solid blue";
+});
 
 // color generator
 
 const colorGenerator = () => {
-  const random = Math.floor(Math.random() * 10);
-  const arr = [
-    "rgb(0,0,128,0.3)",
-    "rgb(0,0,255, 0.3)",
-    "rgb(0,128,0, 0.3)",
-    "rgb(0,255,255, 0.3)",
-    "rgb(128,0,128, 0.3)",
-    "rgb(128,128,0, 0.3)",
-    "rgb(255,0,255, 0.3)",
-    "rgb(255,255,0, 0.3)",
-    "rgb(0,128,128, 0.3)",
-    "rgb(0,255,0, 0.3)",
-  ];
+  const r1 = Math.ceil(Math.random() * 255);
+  const r2 = Math.ceil(Math.random() * 255);
+  const r3 = Math.ceil(Math.random() * 255);
+  const r4 = Math.random().toFixed(1);
 
-  return arr[random];
+  return `rgba(${r1}, ${r2}, ${r3}, ${r4})`;
 };
 
-foodCategory.forEach((el) => (el.style.backgroundColor = colorGenerator()));
-foodCategory.forEach((el) => (el.style.padding = "7rem"));
+foodCategory.forEach((el) => {
+  el.style.backgroundColor = colorGenerator();
+  el.style.padding = "7rem";
+});
 
 // media query
 
 const mediaQuery = window.matchMedia("(max-width: 1000px)");
-console.log(mediaQuery);
 
 function callback(bp) {
   if (bp.matches) {
